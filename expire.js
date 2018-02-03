@@ -20,7 +20,7 @@ exports.handler = (event, context, callback) => {
           .map(snap => ec2.deleteSnapshot({SnapshotId: snap.SnapshotId}).promise())
     ))
     .then(results => {
-      console.log(`Deleted ${results.length} snapshot(s)`)
+      console.log(`Deleted ${results.length} snapshot(s)`);
       callback(null, `Deleted ${results.length} snapshot(s)`);
     })
     .catch(err => {
